@@ -1,0 +1,58 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1693403878
+Global.gd::GDScript::-1::1693331997::0::1::::<>Node<>::
+icon.svg::CompressedTexture2D::6491017630094030167::1690721677::1690721684::1::::<><>::
+new ferret1_8x1.png::CompressedTexture2D::6237714731119272137::1691433888::1691433889::1::::<><>::
+new ferret.png::CompressedTexture2D::7889951084331194053::1691433059::1691433059::1::::<><>::
+tiles_spritesheet.png::CompressedTexture2D::3225141712463068995::1693236992::1693236992::1::::<><>::
+::res://Scenes/::1693321581
+::res://Scenes/entities/::1693275552
+::res://Scenes/entities/enemies/::1693333304
+enemy_1.gd::GDScript::-1::1693333304::0::1::::<>RigidBody2D<>::
+enemy_1.tscn::PackedScene::7720743506817016490::1693322050::0::1::::<><>::res://Scenes/entities/enemies/enemy_1.gd<>uid://cyqkd2q03chy2::::res://icon.svg
+::res://Scenes/entities/Enviorment/::1693350315
+World.gd::GDScript::-1::1693350315::0::1::::<>Node2D<>::
+World.tscn::PackedScene::8861345754415212329::1693346291::0::1::::<><>::res://Scenes/entities/Enviorment/World.gd<>uid://bl7ju3nxur2ot::::res://tiles_spritesheet.png<>uid://day15d46sf25q::::res://Scenes/entities/player/Player.tscn<>uid://dh88rujqyoe8i::::res://Scenes/entities/enemies/enemy_1.tscn
+::res://Scenes/entities/player/::1693346291
+CROUCH.gd::GDScript::-1::1693266668::0::1::::<><>::
+DASH.gd::GDScript::-1::1693080396::0::1::::<><>::
+FALL.gd::GDScript::-1::1693080995::0::1::::<><>::
+FALL.tscn::PackedScene::3847913475597806243::1693322050::0::1::::<><>::res://Scenes/entities/player/FALL.gd
+ferretKnight.png::CompressedTexture2D::7564581283218903625::1693069700::1693321585::1::::<><>::
+HITBOX.gd::GDScript::-1::1693318180::0::1::::<>Area2D<>::
+IDLE.gd::GDScript::-1::1693318180::0::1::::<><>::
+IDLE.tscn::PackedScene::7221011926421782117::1693322050::0::1::::<><>::res://Scenes/entities/player/IDLE.gd
+JUMP.gd::GDScript::-1::1693345858::0::1::::<><>::
+JUMP.tscn::PackedScene::2763741325592569020::1693322050::0::1::::<><>::res://Scenes/entities/player/JUMP.gd
+MOVE.gd::GDScript::-1::1693157889::0::1::::<><>::
+MOVE.tscn::PackedScene::4931075699151825745::1693322050::0::1::::<><>::res://Scenes/entities/player/MOVE.gd
+Player.gd::GDScript::-1::1693345858::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::7210439536607972192::1693346291::0::1::::<><>::res://Scenes/entities/player/Player.gd<>uid://dhkb1c140kxlc::::res://Scenes/entities/player/Assets/Resources/PlayerCrouchingCS.tres<>uid://df1lswdvxeki8::::res://Scenes/entities/player/ferretKnight.png<>res://Scenes/entities/player/Sprite.gd<>res://Scenes/entities/player/STATES.gd<>uid://da46anhb2hjhl::::res://Scenes/entities/player/IDLE.tscn<>res://Scenes/entities/player/CROUCH.gd<>uid://cciwdjl8ybumb::::res://Scenes/entities/player/MOVE.tscn<>uid://bfm1oeympanma::::res://Scenes/entities/player/JUMP.tscn<>uid://bu27tqdulhvqh::::res://Scenes/entities/player/FALL.tscn<>res://Scenes/entities/player/DASH.gd<>uid://dtckbm3wcgxxj::::res://Scenes/entities/player/SLIDE.tscn<>uid://b6r2vm1b54a5x::::res://Scenes/entities/player/RUN.tscn<>res://Scenes/entities/player/HITBOX.gd
+RUN.gd::GDScript::-1::1693316607::0::1::::<><>::
+RUN.tscn::PackedScene::4599046789299601403::1693321582::0::1::::<><>::res://Scenes/entities/player/RUN.gd
+SLIDE.gd::GDScript::-1::1693318180::0::1::::<><>::
+SLIDE.tscn::PackedScene::8497588465968848131::1693322050::0::1::::<><>::res://Scenes/entities/player/SLIDE.gd
+Sprite.gd::GDScript::-1::1693240900::0::1::::<>Sprite2D<>::
+state.gd::GDScript::-1::1693154830::0::1::::<>Node<>::
+STATES.gd::GDScript::-1::1693157889::0::1::::<>Node<>::
+::res://Scenes/entities/player/Assets/::1691361614
+::res://Scenes/entities/player/Assets/FerretGirl/::1693321585
+FallL.png::CompressedTexture2D::3926997576049271136::1690919186::1693321585::1::::<><>::
+FallR.png::CompressedTexture2D::7237017997009106032::1690919181::1693321585::1::::<><>::
+ferret girl_1_10x1 Movement 64x64.png::CompressedTexture2D::4090199743593221362::1690847767::1693321585::1::::<><>::
+ferret girl_2_10x1 Movement 64x64.png::CompressedTexture2D::6951095488113979692::1690850007::1693321585::1::::<><>::
+ferret girl_IdleL_1_10x1.png::CompressedTexture2D::740035157507996033::1690856633::1693321585::1::::<><>::
+ferret girl_IdleR_1_10x1.png::CompressedTexture2D::3810043393399669719::1690856330::1693321585::1::::<><>::
+leftCrouch.png::CompressedTexture2D::7168573772895351338::1690910520::1693321585::1::::<><>::
+new ferret slide R.png::CompressedTexture2D::6364847985142956764::1691361606::1693321585::1::::<><>::
+rightCrouch.png::CompressedTexture2D::8212549576719046761::1690910520::1693321585::1::::<><>::
+SlideL.png::CompressedTexture2D::203639390437655535::1690951382::1693321585::1::::<><>::
+SlideR.png::CompressedTexture2D::4649512209155484452::1691201135::1693321585::1::::<><>::
+WindUpJumpL_8x1.png::CompressedTexture2D::3656992915826719062::1690863969::1693321585::1::::<><>::
+WindUpJumpR_1_8x1.png::CompressedTexture2D::4280292732497676580::1690863964::1693321585::1::::<><>::
+::res://Scenes/entities/player/Assets/Resources/::1693238033
+PlayerCrouchingCS.tres::RectangleShape2D::7671335028283492180::1693075233::0::1::::<><>::
+PlayerStandingCS.tres::RectangleShape2D::1702079186978929286::1693238033::0::1::::<><>::
+::res://Scenes/entities/UI/::1693322050
+game_over.gd::GDScript::-1::1693322050::0::1::::<>Control<>::
+game_over.tscn::PackedScene::6180091061149128068::1693322050::0::1::::<><>::res://Scenes/entities/UI/game_over.gd

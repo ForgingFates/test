@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3vn0ynj35aoy"]
+
+[ext_resource type="PackedScene" uid="uid://dh88rujqyoe8i" path="res://Scenes/entities/enemies/enemy_1.tscn" id="1_miryx"]
+
+[node name="sec1" type="Node"]
+
+[node name="Enemy1" parent="." instance=ExtResource("1_miryx")]

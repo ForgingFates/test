@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6r2vm1b54a5x"]
+
+[ext_resource type="Script" path="res://Scenes/entities/player/RUN.gd" id="1_78ulx"]
+
+[node name="RUN" type="Node"]
+script = ExtResource("1_78ulx")

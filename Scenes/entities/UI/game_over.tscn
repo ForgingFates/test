@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cubxgxtf1w60g"]
+
+[ext_resource type="Script" path="res://Scenes/entities/UI/game_over.gd" id="1_8fwij"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8445"]
+font_size = 48
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8fwij")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 649.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 295.0
+offset_top = 66.0
+offset_right = 571.0
+offset_bottom = 136.0
+scale = Vector2(1.88979, 2.56862)
+text = "Game Over"
+label_settings = SubResource("LabelSettings_l8445")
+uppercase = true
+
+[node name="Reload" type="Button" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 292.0
+offset_right = 562.0
+offset_bottom = 323.0
+scale = Vector2(2.12031, 2.04)
+text = "Reload Last Save"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 383.0
+offset_right = 547.0
+offset_bottom = 414.0
+scale = Vector2(2.17386, 1.94913)
+text = "Quit"
+
+[connection signal="pressed" from="Reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

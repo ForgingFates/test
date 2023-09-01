@@ -1,0 +1,8 @@
+res://Scenes/entities/player/Player.tscn
+res://Scenes/entities/Enviorment/World.gd
+res://Scenes/entities/Enviorment/World.tscn
+res://Global.gd
+res://Scenes/entities/player/Player.gd
+res://Scenes/entities/Enviorment/sec1.gd
+res://Scenes/entities/enemies/enemy_1.gd
+res://Scenes/entities/enemies/enemy_1.tscn

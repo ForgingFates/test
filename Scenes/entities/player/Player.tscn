@@ -1,0 +1,153 @@
+[gd_scene load_steps=18 format=3 uid="uid://day15d46sf25q"]
+
+[ext_resource type="Script" path="res://Scenes/entities/player/Player.gd" id="1_jal3m"]
+[ext_resource type="Shape2D" uid="uid://dhkb1c140kxlc" path="res://Scenes/entities/player/Assets/Resources/PlayerCrouchingCS.tres" id="2_ygcnx"]
+[ext_resource type="Texture2D" uid="uid://df1lswdvxeki8" path="res://Scenes/entities/player/ferretKnight.png" id="3_oljs3"]
+[ext_resource type="Script" path="res://Scenes/entities/player/Sprite.gd" id="4_kunno"]
+[ext_resource type="Script" path="res://Scenes/entities/player/STATES.gd" id="5_iqqpm"]
+[ext_resource type="PackedScene" uid="uid://da46anhb2hjhl" path="res://Scenes/entities/player/IDLE.tscn" id="6_gpk3d"]
+[ext_resource type="Script" path="res://Scenes/entities/player/CROUCH.gd" id="7_btkfr"]
+[ext_resource type="PackedScene" uid="uid://cciwdjl8ybumb" path="res://Scenes/entities/player/MOVE.tscn" id="8_qlvgt"]
+[ext_resource type="PackedScene" uid="uid://bfm1oeympanma" path="res://Scenes/entities/player/JUMP.tscn" id="9_bv40j"]
+[ext_resource type="PackedScene" uid="uid://bu27tqdulhvqh" path="res://Scenes/entities/player/FALL.tscn" id="10_0xttr"]
+[ext_resource type="Script" path="res://Scenes/entities/player/DASH.gd" id="11_ulfiw"]
+[ext_resource type="PackedScene" uid="uid://dtckbm3wcgxxj" path="res://Scenes/entities/player/SLIDE.tscn" id="12_78l4x"]
+[ext_resource type="PackedScene" uid="uid://b6r2vm1b54a5x" path="res://Scenes/entities/player/RUN.tscn" id="13_3qsxp"]
+[ext_resource type="Script" path="res://Scenes/entities/player/HITBOX.gd" id="14_221i7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l8p1f"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gskrg"]
+size = Vector2(20, 8)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3ci00"]
+radius = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 31
+script = ExtResource("1_jal3m")
+
+[node name="IDLE_Cshape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_l8p1f")
+
+[node name="CROUCH_Cshape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = ExtResource("2_ygcnx")
+disabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2.27374e-13, 6)
+scale = Vector2(0.464844, 0.451172)
+texture = ExtResource("3_oljs3")
+script = ExtResource("4_kunno")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="STATES" type="Node" parent="."]
+script = ExtResource("5_iqqpm")
+
+[node name="IDLE" parent="STATES" instance=ExtResource("6_gpk3d")]
+
+[node name="CROUCH" parent="STATES" instance=ExtResource("6_gpk3d")]
+script = ExtResource("7_btkfr")
+
+[node name="MOVE" parent="STATES" instance=ExtResource("8_qlvgt")]
+
+[node name="JUMP" parent="STATES" instance=ExtResource("9_bv40j")]
+
+[node name="FALL" parent="STATES" instance=ExtResource("10_0xttr")]
+
+[node name="DASH" parent="STATES" instance=ExtResource("10_0xttr")]
+script = ExtResource("11_ulfiw")
+dash_duration = 0.2
+
+[node name="DashDuration" type="Timer" parent="STATES/DASH"]
+one_shot = true
+
+[node name="SLIDE" parent="STATES" instance=ExtResource("12_78l4x")]
+
+[node name="RUN" parent="STATES" instance=ExtResource("13_3qsxp")]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -31.0
+offset_top = -38.0
+offset_right = 30.0
+offset_bottom = -12.0
+text = "STATE"
+horizontal_alignment = 1
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="TopRight" type="RayCast2D" parent="Raycasts"]
+position = Vector2(0, -6)
+target_position = Vector2(12, 0)
+collision_mask = 128
+
+[node name="BotRight" type="RayCast2D" parent="Raycasts"]
+position = Vector2(0, 22)
+target_position = Vector2(12, 0)
+collision_mask = 128
+
+[node name="TopLeft" type="RayCast2D" parent="Raycasts"]
+position = Vector2(0, -6)
+target_position = Vector2(-12, 0)
+collision_mask = 128
+
+[node name="BotLeft" type="RayCast2D" parent="Raycasts"]
+position = Vector2(0, 22)
+target_position = Vector2(-12, 0)
+collision_mask = 128
+
+[node name="RayRoof" type="Node2D" parent="."]
+
+[node name="up" type="RayCast2D" parent="RayRoof"]
+position = Vector2(14, 9)
+target_position = Vector2(0, -16)
+
+[node name="up2" type="RayCast2D" parent="RayRoof"]
+position = Vector2(-14, 9)
+target_position = Vector2(0, -16)
+
+[node name="HITBOX" type="Area2D" parent="."]
+position = Vector2(0, 6)
+collision_mask = 2
+monitoring = false
+script = ExtResource("14_221i7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HITBOX"]
+modulate = Color(0.25098, 1, 0, 1)
+shape = SubResource("RectangleShape2D_gskrg")
+disabled = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 15
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+self_modulate = Color(1, 0.0705882, 0.0705882, 1)
+position = Vector2(0, 8)
+shape = SubResource("CapsuleShape2D_3ci00")
+
+[node name="atk_cd" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="hitframes" type="Timer" parent="."]
+wait_time = 0.105
+one_shot = true
+
+[node name="Arealabel" type="Label" parent="."]
+visible = false
+offset_left = -70.0
+offset_top = -64.0
+offset_right = 71.0
+offset_bottom = -38.0
+text = "The Trail of Spikes"
+horizontal_alignment = 1
+
+[connection signal="timeout" from="STATES/DASH/DashDuration" to="STATES/DASH" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="atk_cd" to="." method="_on_atk_cd_timeout"]
+[connection signal="timeout" from="hitframes" to="." method="_on_hitframes_timeout"]
